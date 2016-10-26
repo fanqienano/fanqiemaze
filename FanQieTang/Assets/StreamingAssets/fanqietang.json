@@ -1,0 +1,16 @@
+{
+    "1": {
+        "height": 5,
+        "width": 3,
+        "startText": "Episode 1",
+        "clearText": "游戏开始~",
+        "imageList": []
+    },
+    "2": {
+        "height": 10,
+        "width": 5,
+        "startText": "Episode 2",
+        "clearText": "游戏结束~",
+        "imageList": []
+    }
+}
