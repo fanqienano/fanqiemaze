@@ -30,9 +30,9 @@ public class ReadJson
 		this.curDialogInfo.setHeight (int.Parse (curJson ["height"].ToString ()));
 		this.curDialogInfo.setWidth (int.Parse (curJson ["width"].ToString ()));
 		this.curDialogInfo.clearImageList ();
-		if (curJson ["imageList"].IsArray) {
+		if (curJson ["imageList"].IsArray && curJson ["imageList"].Count > 0) {
 			for (int i = 0; i < curJson ["imageList"].Count; i++) {
-				this.curDialogInfo.addImageList (curJson ["imageList"] [i]);
+				this.curDialogInfo.addImageList (curJson ["imageList"] [i].ToString());
 			}
 		}
 	}

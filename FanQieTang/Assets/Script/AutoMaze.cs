@@ -30,14 +30,14 @@ public class AutoMaze : MonoBehaviour
 		x = this.readJson.curDialogInfo.getWidth ();
 		s = this.readJson.curDialogInfo.getHeight ();
 		List<string> imgList = this.readJson.curDialogInfo.getImageList ();
-		foreach(string img in imgList){
-			textureList.Add((Texture2D) Resources.Load(img));
+		foreach (string img in imgList) {
+			textureList.Add ((Texture2D)Resources.Load (img));
 		}
 //		Wall.GetComponent<Renderer> ().material.mainTexture = texture;
 		space = Wall.transform.localScale.z / 2f;
 		wallLength = Wall.transform.localScale.z;
 		wallHight = Wall.transform.localScale.y;
-		Ground.transform.localScale = new Vector3(s * wallLength, 1, x * wallLength);
+		Ground.transform.localScale = new Vector3 (s * wallLength, 1, x * wallLength);
 		Ground.transform.position = new Vector3 (s * wallLength / 2f - wallLength / 2f, 0f, x * wallLength / 2f - wallLength / 2f);
 		float doorX = s * wallLength - Door.transform.localScale.x - wallLength / 2f + Door.transform.localScale.x / 2f;
 		float doorZ = x * wallLength - Door.transform.localScale.z - wallLength / 2f + Door.transform.localScale.z / 2f;
@@ -58,7 +58,7 @@ public class AutoMaze : MonoBehaviour
 		for (int i = 0; i < s - 1; i++)
 			for (int j = 0; j < x; j++) {
 				GameObject Walli = Instantiate (Wall) as GameObject;
-				Walli.GetComponent<Renderer> ().material.mainTexture = textureList[Random.Range(0, textureList.Count)];
+				Walli.GetComponent<Renderer> ().material.mainTexture = textureList [Random.Range (0, textureList.Count)];
 //				Walli.transform.eulerAngles = new Vector3 (0, 90, 0);
 				Walli.transform.position = NodeList [i, j].Position + new Vector3 (space, wallHight / 2, 0);
 				Walli.name = ("i" + i + " " + j);
@@ -71,7 +71,7 @@ public class AutoMaze : MonoBehaviour
 		for (int i = 0; i < x - 1; i++)
 			for (int j = 0; j < s; j++) {
 				GameObject Wallj = Instantiate (Wall) as GameObject;
-				Wallj.GetComponent<Renderer> ().material.mainTexture = textureList[Random.Range(0, textureList.Count)];
+				Wallj.GetComponent<Renderer> ().material.mainTexture = textureList [Random.Range (0, textureList.Count)];
 				Wallj.transform.eulerAngles = new Vector3 (0, 90, 0);
 				Wallj.transform.position = NodeList [j, i].Position + new Vector3 (0, wallHight / 2, space);
 				Wallj.name = ("j" + i + " " + j);
@@ -105,8 +105,8 @@ public class AutoMaze : MonoBehaviour
 		for (int i = 0; i < s; i++) {
 			GameObject WallStartic1 = Instantiate (Wall) as GameObject;
 			GameObject WallStartic2 = Instantiate (Wall) as GameObject;
-			WallStartic1.GetComponent<Renderer> ().material.mainTexture = textureList[Random.Range(0, textureList.Count)];
-			WallStartic2.GetComponent<Renderer> ().material.mainTexture = textureList[Random.Range(0, textureList.Count)];
+			WallStartic1.GetComponent<Renderer> ().material.mainTexture = textureList [Random.Range (0, textureList.Count)];
+			WallStartic2.GetComponent<Renderer> ().material.mainTexture = textureList [Random.Range (0, textureList.Count)];
 			WallStartic1.transform.eulerAngles = new Vector3 (0, 90, 0);
 			WallStartic2.transform.eulerAngles = new Vector3 (0, 90, 0);
 			WallStartic1.name = "WallStartic1";
@@ -117,8 +117,8 @@ public class AutoMaze : MonoBehaviour
 		for (int i = 0; i < x; i++) {
 			GameObject WallStartic1 = Instantiate (Wall) as GameObject;
 			GameObject WallStartic2 = Instantiate (Wall) as GameObject;
-			WallStartic1.GetComponent<Renderer> ().material.mainTexture = textureList[Random.Range(0, textureList.Count)];
-			WallStartic2.GetComponent<Renderer> ().material.mainTexture = textureList[Random.Range(0, textureList.Count)];
+			WallStartic1.GetComponent<Renderer> ().material.mainTexture = textureList [Random.Range (0, textureList.Count)];
+			WallStartic2.GetComponent<Renderer> ().material.mainTexture = textureList [Random.Range (0, textureList.Count)];
 //			WallStartic1.transform.eulerAngles = new Vector3 (0, 90, 0);
 //			WallStartic2.transform.eulerAngles = new Vector3 (0, 90, 0);
 			WallStartic1.name = "WallStartic2";

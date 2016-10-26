@@ -4,13 +4,19 @@
         "width": 3,
         "startText": "Episode 1",
         "clearText": "游戏开始~",
-        "imageList": []
+        "imageList": [
+            "50848465_p0",
+            "59536586_p6"
+        ]
     },
     "2": {
         "height": 10,
         "width": 5,
         "startText": "Episode 2",
         "clearText": "游戏结束~",
-        "imageList": []
+        "imageList": [
+            "50848465_p0",
+            "59536586_p6"
+        ]
     }
 }
