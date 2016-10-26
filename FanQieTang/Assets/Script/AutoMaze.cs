@@ -23,10 +23,16 @@ public class AutoMaze : MonoBehaviour
 	float wallLength;
 	float wallHight;
 
+	private ReadJson readJson = new ReadJson ();
+
 	void Start ()
 	{
-		textureList.Add((Texture2D) Resources.Load("50848465_p0"));
-		textureList.Add((Texture2D) Resources.Load("59536586_p6"));
+		x = this.readJson.curDialogInfo.getWidth ();
+		s = this.readJson.curDialogInfo.getHeight ();
+		List<string> imgList = this.readJson.curDialogInfo.getImageList ();
+		foreach(string img in imgList){
+			textureList.Add((Texture2D) Resources.Load(img));
+		}
 //		Wall.GetComponent<Renderer> ().material.mainTexture = texture;
 		space = Wall.transform.localScale.z / 2f;
 		wallLength = Wall.transform.localScale.z;
